@@ -16,11 +16,30 @@
 language: java
 sudo: false
 
-jdk:
-  - openjdk7
-  - openjdk8
-  - oraclejdk8
-  - oraclejdk9
+#jdk:
+#  - openjdk7
+#  - openjdk8
+#  - oraclejdk8
+#  - oraclejdk9
+
+
+matrix:
+   include:
+   - jdk: openjdk7
+     os: linux
+     env: JDK_RELEASE='OpenJDK 7' ARCH=x86
+   - jdk: openjdk8
+     os: linux
+     env: JDK_RELEASE='OpenJDK 8' ARCH=x86
+   - jdk: oraclejdk8
+     os: linux
+     env: JDK_RELEASE='OracleJDK 8' ARCH=x86
+   - jdk: oraclejdk9
+     os: linux
+     env: JDK_RELEASE='OracleJDK 9' ARCH=x86
+   - jdk: openjdk8
+     os: linux-ppc64le
+     env: JDK_RELEASE='OpenJDK 8' ARCH=ppc64le
 
 script:
   - mvn
