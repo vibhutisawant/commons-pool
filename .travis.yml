@@ -25,17 +25,13 @@ sudo: false
 
 matrix:
    include:
-   - jdk: openjdk7
-     os: linux
+   - jdk: openjdk7 
      env: JDK_RELEASE='OpenJDK 7' ARCH=x86
    - jdk: openjdk8
-     os: linux
      env: JDK_RELEASE='OpenJDK 8' ARCH=x86
    - jdk: oraclejdk8
-     os: linux
      env: JDK_RELEASE='OracleJDK 8' ARCH=x86
    - jdk: oraclejdk9
-     os: linux
      env: JDK_RELEASE='OracleJDK 9' ARCH=x86
    - jdk: openjdk8
      os: linux-ppc64le
